@@ -25,6 +25,7 @@ var school = {
 var studente1 = {
     nome: "Lara",
     cognome: "Verdi",
+    età: 22,
 }
 
 school.studenti.push(studente1);
@@ -32,6 +33,7 @@ school.studenti.push(studente1);
 var studente2 = {
     nome: "Massimo",
     cognome: "Gialli",
+    età: 20,
 }
 
 school.studenti.push(studente2);
@@ -39,6 +41,7 @@ school.studenti.push(studente2);
 var studente3 = {
     nome: "Francesco",
     cognome: "Bianchi",
+    età: 26,
 }
 
 school.studenti.push(studente3);
@@ -47,8 +50,10 @@ console.log(school);
 
 for (var i = 0; i < school.studenti.length; i++){
     for (var k in school.studenti[i]) {
-        console.log(k, school.studenti[i] [k]);
-        document.getElementsByClassName("studenti")[0].innerHTML += "<li>" + k + ": " + school.studenti[i] [k] + "</li>";
+        if (k !== "età") {
+            console.log(k, school.studenti[i] [k]);
+            document.getElementsByClassName("studenti")[0].innerHTML += "<li>" + k + ": " + school.studenti[i] [k] + "</li>";
+        }
     }
 }
 
